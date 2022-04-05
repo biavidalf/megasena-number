@@ -16,22 +16,37 @@
     <script>
         function gerarNumero(){
             var numeros = ''
+            var array_numeros = []
 
             for(var i = 0; i < 6; i++){
-                numeros += numeroAleatorio(1, 61) + ' '
+                var num_atual = numeroAleatorio()
+
+                // IF ELSE para impedir numeros repetidos
+                if(i == 0){
+                    array_numeros.push(num_atual);
+                }else if(i != 0 && !array_numeros.includes(num_atual)){
+                    array_numeros.push(num_atual);
+                }else{
+                    i--;
+                }
             }
+            for(numero in array_numeros){ numeros += array_numeros[numero] + " " }
+
             document.getElementById('label_resultado').value = numeros
         }
 
-        function numeroAleatorio(min, max){ 
-            var num = Math.random()*(max-min) + min 
+        // Função para gerar um numero aleatório
+        function numeroAleatorio(){ 
+            var valor_maximo = 61
+            var valor_minimo = 1
+            var num = Math.random()*(valor_maximo - valor_minimo) + valor_minimo 
             return Math.floor(num)
         }
 
+        // Função pra copiar o texto do input pra área de transferência do user
         function copiar(){
             copyTextToClipboard(document.getElementById('label_resultado').value)
         }
-        
         function copyTextToClipboard(text) {
             var textArea = document.createElement("textarea");
 
