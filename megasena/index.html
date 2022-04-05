@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gerador Megasena</title>
+</head>
+<body>
+    <h3>Gerador de números para a Megasena!</h3>
+    <input type="text" id="label_resultado" placeholder="Número Gerado" disabled><br>
+    <button onclick="gerarNumero()">GERAR</button>
+    <button onclick="copiar()">Copiar pra area de transferência</button>
+
+    <script>
+        function gerarNumero(){
+            var numeros = ''
+
+            for(var i = 0; i < 6; i++){
+                numeros += numeroAleatorio(1, 61) + ' '
+            }
+            document.getElementById('label_resultado').value = numeros
+        }
+
+        function numeroAleatorio(min, max){ 
+            var num = Math.random()*(max-min) + min 
+            return Math.floor(num)
+        }
+
+        function copiar(){
+            copyTextToClipboard(document.getElementById('label_resultado').value)
+        }
+        
+        function copyTextToClipboard(text) {
+            var textArea = document.createElement("textarea");
+
+            textArea.style.position = 'fixed';
+            textArea.style.top = 0;
+            textArea.style.left = 0;
+            textArea.style.width = '2em';
+            textArea.style.height = '2em';
+            textArea.style.padding = 0;
+            textArea.style.border = 'none';
+            textArea.style.outline = 'none';
+            textArea.style.boxShadow = 'none';
+            textArea.style.background = 'transparent';
+            textArea.value = text;
+
+            document.body.appendChild(textArea);
+            textArea.select();
+
+            try {
+                var successful = document.execCommand('copy');
+                var msg = successful ? 'successful' : 'unsuccessful';
+                console.log('Copying text command was ' + msg);
+            } catch (err) {
+                console.log('Oops, unable to copy');
+                window.prompt("Copie para área de transferência: Ctrl+C e tecle Enter", text);
+            }
+
+            document.body.removeChild(textArea);
+        }
+    </script>
+</body>
+</html>
