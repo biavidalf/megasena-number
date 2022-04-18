@@ -1,0 +1,116 @@
+/* 
+============ CONFIGURAÇÕES GERAIS ============
+*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 14px;
+}
+body{
+    background: rgb(0,112,184);
+    background: linear-gradient(90deg, rgba(0,112,184,1) 17%, rgba(50,176,175,1) 100%);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 0 20px 0;
+    height: 100vh;
+    font-weight: 300;
+}
+
+
+/* 
+============ #LOGO ============
+*/
+#logo img{
+    display: block;
+    margin-bottom: 5px;
+    width: 250px;
+}
+#logo p{
+    font-size: 1.4em;
+}
+
+
+/* 
+============ #GERADOR ============
+*/
+#gerador, #logo p, #gerador p{
+    text-align: center;
+}
+
+/* Titulo megasena */
+#gerador h3{
+    font-size: 2.9em;
+    margin-bottom: 5px;
+    font-weight: 500;
+    word-spacing: 10px;
+    letter-spacing: 0.5px;
+}
+#gerador p{    
+    width: 300px;
+    margin: auto;
+    font-size: 1.2em;
+}
+
+/* Resultado texto */
+#gerador #resultado{
+    display: block;
+    margin: 20px auto 6px auto;
+}
+#gerador #label_resultado{
+    display: inline;
+    border: none;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #000;
+    margin-right: 10px;
+    font-size: 1.3em;
+    width: 230px;
+    height: 50px;
+    padding-left: 20px;
+}
+
+/* Botao de copiar pra area de transferencia */
+#gerador .btn-copy{
+    border: none;
+    background: transparent;
+    padding: 0;
+}
+.fa-copy{
+    font-size: 2.3em;
+    color: white;
+    cursor: pointer;
+}
+
+/* Botao pra gerar os numeros */
+#gerador .btn-gerar{
+    margin: 10px auto;
+    border: none;
+    border-radius: 15px;
+    padding: 15px 35px;
+    background-color: #F68F34;
+    color: white;
+    font-size: 1.3em;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+#gerador .btn-gerar:hover{
+    background-color: #faa85f;
+}
+
+/* 
+============ RODAPÉ ============
+*/
+#rodape a{
+    color: white;
+    font-size: 1em;
+    padding: 4px 7px;
+    text-decoration: none;
+}
+#rodape a:hover{
+    text-decoration: underline;
+}
