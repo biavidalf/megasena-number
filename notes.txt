@@ -1,0 +1,3 @@
+========== LINKS REFERENCIAS ==========
+http://www.vision.ime.usp.br/~pmiranda/mac110_1s14/EPs/ep01/numeros_aleatorios.html
+https://en.wikipedia.org/wiki/Random_number_generation
