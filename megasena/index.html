@@ -24,18 +24,26 @@
         <p>Caixa Econômica Federal</p>
     </div>
 
-    <div id="gerador">
-        <h3>Gerador Megasena</h3>
-        <p>Sem ideia de que números apostar? Aperte o botão que nós te ajudamos!</p>
-        <div id="resultado">
-            <input id="label_resultado" placeholder="Numero Gerado" disabled >
-            <button class="btn-copy" onclick="copiar()"><i class="fa-solid fa-copy"></i></button>
+    <div id="main-content">
+        <div id="gerador">
+            <div><h3>Gerador Megasena</h3></div>
+            <div><p>Sem ideia de que números apostar? Aperte o botão que nós te ajudamos!</p></div>
+            
+            <div id="resultado">
+                <div>
+                    <input id="label_resultado" placeholder="Numero Gerado" disabled >
+                </div>
+                <div>
+                    <button class="btn-copy" onclick="copiar()"><i class="fa-solid fa-copy"></i></button>
+                </div>
+            </div>
+            <div>
+                <button class="btn-gerar" onclick="gerarNumero()">GERAR</button>
+            </div>
         </div>
-   
-        <button class="btn-gerar" onclick="gerarNumero()">GERAR</button>
 
+        <div id="cartela"></div>
     </div>
-
     <div id="rodape">
         <a href="">Site oficial</a>
         <a href="">Ver último jogo</a>
@@ -43,7 +51,11 @@
     </div>
 
     <script>
+        for(var k = 1; k <= 60; k++){
+            document.getElementById('cartela').innerHTML += ` <div>${k}<div>`
+        }
         function gerarNumero(){
+            document.getElementById('cartela').innerHTML = ''
             var numeros = ''
             var array_numeros = []
 
@@ -59,7 +71,26 @@
                     i--;
                 }
             }
-            for(numero in array_numeros){ numeros += array_numeros[numero] + " " }
+
+            for(numero in array_numeros){ numeros += array_numeros[numero] + "  " }
+
+            var contador = 1;
+            // Ordenando array pra otimizar pesquisa
+            array_numeros.sort((a, b) => a-b)
+            
+            
+            for(var numero = 0; numero < array_numeros.length + 1; numero++){
+                arrayLoop:
+                for(; contador <= 60; contador++){
+                    if(array_numeros[numero] == contador){
+                        document.getElementById('cartela').innerHTML += `<div class="selecionado">${array_numeros[numero]}</div>`
+                        contador++
+                        break arrayLoop
+                    }else{
+                        document.getElementById('cartela').innerHTML += ` <div>${contador}<div>`
+                    }
+                }
+            }
 
             document.getElementById('label_resultado').value = numeros
         }
@@ -75,6 +106,7 @@
         // Função pra copiar o texto do input pra área de transferência do user
         function copiar(){
             copyTextToClipboard(document.getElementById('label_resultado').value)
+            alert('Números copiados para sua área de transferência!')
         }
         function copyTextToClipboard(text) {
             var textArea = document.createElement("textarea");
@@ -106,5 +138,6 @@
             document.body.removeChild(textArea);
         }
     </script>
+
 </body>
 </html>

@@ -34,10 +34,27 @@ body{
     font-size: 1.4em;
 }
 
+/* 
+============ MAIN CONTENT ============
+*/
+#main-content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 65%;
+    margin: auto;
+}
 
 /* 
 ============ #GERADOR ============
 */
+#gerador{
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
 #gerador, #logo p, #gerador p{
     text-align: center;
 }
@@ -58,16 +75,18 @@ body{
 
 /* Resultado texto */
 #gerador #resultado{
-    display: block;
+    display: flex;
     margin: 20px auto 6px auto;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 #gerador #label_resultado{
-    display: inline;
     border: none;
     border-radius: 5px;
     background-color: #fff;
     color: #000;
-    margin-right: 10px;
+    margin: 0 15px 10px 0;
     font-size: 1.3em;
     width: 230px;
     height: 50px;
@@ -84,10 +103,12 @@ body{
     font-size: 2.3em;
     color: white;
     cursor: pointer;
+    margin-bottom: 7px;
 }
 
 /* Botao pra gerar os numeros */
 #gerador .btn-gerar{
+    display: inline;
     margin: 10px auto;
     border: none;
     border-radius: 15px;
@@ -103,6 +124,37 @@ body{
 }
 
 /* 
+============ CARTELA ============
+*/
+#cartela{
+    height: 100%;
+    width: 45%;
+    display: flex;
+    align-items: start;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    background-color: rgb(219, 219, 219);
+    padding: 8px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+#cartela > div{
+    text-align: center;
+    width: 8%;
+    background-color: transparent;
+    border-radius: 50%;
+    border: 1px solid #F68F34;
+    color: #F68F34;
+    margin: auto 3px;
+    padding: 3px 0;
+}
+#cartela div.selecionado{
+    background-color: #F68F34;
+    border: none;
+    color: white;
+}
+
+/* 
 ============ RODAPÉ ============
 */
 #rodape a{
@@ -113,4 +165,52 @@ body{
 }
 #rodape a:hover{
     text-decoration: underline;
+}
+
+
+/* RESPONSIVIDADE */
+@media(max-width: 1102px){
+    #main-content{
+        flex-direction: column;
+        width: 90%;
+    }
+
+    #gerador{
+        margin-bottom: 50px;
+    }
+    #gerador #resultado{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        align-self: center;
+        margin: 13px 0 0 0;
+        padding: 0;
+    }
+    #gerador #label_resultado{
+        margin: auto;
+        margin-bottom: 10px;
+        text-align: center;
+        padding: 0;
+    }
+
+    #cartela{
+        margin-bottom: 20px;
+    }
+}
+@media(max-width: 784px){
+    #cartela{
+        width: 80%;
+    }
+    #cartela > div{
+        margin-bottom: 10px;
+    }
+}
+
+@media(max-width: 447px){
+    #cartela{
+        width: 100%;
+    }
+    #cartela > div{
+        margin-bottom: 10px;
+    }
 }
