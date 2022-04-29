@@ -1,0 +1,216 @@
+/* 
+============ CONFIGURAÇÕES GERAIS ============
+*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 14px;
+}
+body{
+    background: rgb(0,112,184);
+    background: linear-gradient(90deg, rgba(0,112,184,1) 17%, rgba(50,176,175,1) 100%);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 0 20px 0;
+    height: 100vh;
+    font-weight: 300;
+}
+
+
+/* 
+============ #LOGO ============
+*/
+#logo img{
+    display: block;
+    margin-bottom: 5px;
+    width: 250px;
+}
+#logo p{
+    font-size: 1.4em;
+}
+
+/* 
+============ MAIN CONTENT ============
+*/
+#main-content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 65%;
+    margin: auto;
+}
+
+/* 
+============ #GERADOR ============
+*/
+#gerador{
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+#gerador, #logo p, #gerador p{
+    text-align: center;
+}
+
+/* Titulo megasena */
+#gerador h3{
+    font-size: 2.9em;
+    margin-bottom: 5px;
+    font-weight: 500;
+    word-spacing: 10px;
+    letter-spacing: 0.5px;
+}
+#gerador p{    
+    width: 300px;
+    margin: auto;
+    font-size: 1.2em;
+}
+
+/* Resultado texto */
+#gerador #resultado{
+    display: flex;
+    margin: 20px auto 6px auto;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+#gerador #label_resultado{
+    border: none;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #000;
+    margin: 0 15px 10px 0;
+    font-size: 1.3em;
+    width: 230px;
+    height: 50px;
+    padding-left: 20px;
+}
+
+/* Botao de copiar pra area de transferencia */
+#gerador .btn-copy{
+    border: none;
+    background: transparent;
+    padding: 0;
+}
+.fa-copy{
+    font-size: 2.3em;
+    color: white;
+    cursor: pointer;
+    margin-bottom: 7px;
+}
+
+/* Botao pra gerar os numeros */
+#gerador .btn-gerar{
+    display: inline;
+    margin: 10px auto;
+    border: none;
+    border-radius: 15px;
+    padding: 15px 35px;
+    background-color: #F68F34;
+    color: white;
+    font-size: 1.3em;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+#gerador .btn-gerar:hover{
+    background-color: #faa85f;
+}
+
+/* 
+============ CARTELA ============
+*/
+#cartela{
+    height: 100%;
+    width: 45%;
+    display: flex;
+    align-items: start;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    background-color: rgb(219, 219, 219);
+    padding: 8px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+#cartela > div{
+    text-align: center;
+    width: 8%;
+    background-color: transparent;
+    border-radius: 50%;
+    border: 1px solid #F68F34;
+    color: #F68F34;
+    margin: auto 3px;
+    padding: 3px 0;
+}
+#cartela div.selecionado{
+    background-color: #F68F34;
+    border: none;
+    color: white;
+}
+
+/* 
+============ RODAPÉ ============
+*/
+#rodape a{
+    color: white;
+    font-size: 1em;
+    padding: 4px 7px;
+    text-decoration: none;
+}
+#rodape a:hover{
+    text-decoration: underline;
+}
+
+
+/* RESPONSIVIDADE */
+@media(max-width: 1102px){
+    #main-content{
+        flex-direction: column;
+        width: 90%;
+    }
+
+    #gerador{
+        margin-bottom: 50px;
+    }
+    #gerador #resultado{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        align-self: center;
+        margin: 13px 0 0 0;
+        padding: 0;
+    }
+    #gerador #label_resultado{
+        margin: auto;
+        margin-bottom: 10px;
+        text-align: center;
+        padding: 0;
+    }
+
+    #cartela{
+        margin-bottom: 20px;
+    }
+}
+@media(max-width: 784px){
+    #cartela{
+        width: 80%;
+    }
+    #cartela > div{
+        margin-bottom: 10px;
+    }
+}
+
+@media(max-width: 447px){
+    #cartela{
+        width: 100%;
+    }
+    #cartela > div{
+        margin-bottom: 10px;
+    }
+}

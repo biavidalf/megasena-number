@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gerador Megasena</title>
+
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Link icones -->
+    <script src="https://kit.fontawesome.com/cb18e7956b.js" crossorigin="anonymous"></script>
+
+    <!-- Link fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="logo">
+        <img src="caixa_logo.png">
+        <p>Caixa Econômica Federal</p>
+    </div>
+
+    <div id="main-content">
+        <div id="gerador">
+            <div><h3>Gerador Megasena</h3></div>
+            <div><p>Sem ideia de que números apostar? Aperte o botão que nós te ajudamos!</p></div>
+            
+            <div id="resultado">
+                <div>
+                    <input id="label_resultado" placeholder="Numero Gerado" disabled >
+                </div>
+                <div>
+                    <button class="btn-copy" onclick="copiar()"><i class="fa-solid fa-copy"></i></button>
+                </div>
+            </div>
+            <div>
+                <button class="btn-gerar" onclick="gerarNumero()">GERAR</button>
+            </div>
+        </div>
+
+        <div id="cartela"></div>
+    </div>
+    <div id="rodape">
+        <a href="">Site oficial</a>
+        <a href="">Ver último jogo</a>
+        <a href="">Ver regras</a>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
