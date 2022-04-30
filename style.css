@@ -140,12 +140,12 @@ body{
 }
 #cartela > div{
     text-align: center;
-    width: 8%;
+    width: 7%;
     background-color: transparent;
     border-radius: 50%;
     border: 1px solid #F68F34;
     color: #F68F34;
-    margin: auto 3px;
+    margin: auto 5px;
     padding: 3px 0;
 }
 #cartela div.selecionado{
@@ -207,6 +207,13 @@ body{
 }
 
 @media(max-width: 447px){
+    body{
+        padding-bottom: 30px;
+    }
+    #logo{
+        margin-bottom: 45px;
+    }
+
     #cartela{
         width: 100%;
     }

@@ -1,11 +1,15 @@
 for(var k = 1; k <= 60; k++){
+    // Criando a cartela padrão
     document.getElementById('cartela').innerHTML += ` <div>${k}<div>`
 }
+
+/* Função main */
 function gerarNumero(){
     document.getElementById('cartela').innerHTML = ''
     var numeros = ''
     var array_numeros = []
 
+    // Gerando números aleatórios de 1 a 60 e adicionando no array numeros
     for(var i = 0; i < 6; i++){
         var num_atual = numeroAleatorio()
 
@@ -18,14 +22,15 @@ function gerarNumero(){
             i--;
         }
     }
-
+    
+    // String com os números sorteados
     for(numero in array_numeros){ numeros += array_numeros[numero] + "  " }
-
-    var contador = 1;
+    
     // Ordenando array pra otimizar pesquisa
     array_numeros.sort((a, b) => a-b)
+    var contador = 1;    
     
-    
+    // Dando destaque para os números sorteados na cartela
     for(var numero = 0; numero < array_numeros.length + 1; numero++){
         arrayLoop:
         for(; contador <= 60; contador++){
@@ -42,7 +47,7 @@ function gerarNumero(){
     document.getElementById('label_resultado').value = numeros
 }
 
-// Função para gerar um numero aleatório
+// Função para gerar um numero aleatório de 1 a 60
 function numeroAleatorio(){ 
     var valor_maximo = 61
     var valor_minimo = 1
