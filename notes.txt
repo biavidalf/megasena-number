@@ -1,16 +1,4 @@
-========== LINKS REFERENCIAS ==========
+============================== LINKS REFERENCIAS ==============================
 http://www.vision.ime.usp.br/~pmiranda/mac110_1s14/EPs/ep01/numeros_aleatorios.html
 https://en.wikipedia.org/wiki/Random_number_generation
-
-========== ANOTAÇÕES ==========
-- Geração de números aleatórios
-A geração de números aleátorios é um assunto bastante comentando e é algo usado em diversas áreas.
-
-Os números aleatórios que vemos em computadores comuns não são verdadeiramente aleatórios, como falado no texto base do trabalho. Sendo assim, eles são chamados de número pseudo-aleatórios.
-
-Para geração de números realmente aleatórios, existem algumas máquinas feitas só para isso.
-
-Voltando para os números pseudo-aleatórios, são vários os algoritmos existentes para a sua geração. Geralmente eles são gerados a partir de fórmulas matemáticas junto com probabilidades.
-
-
-- Números pseudo-aleatórios
+https://hackernoon.com/how-does-javascripts-math-random-generate-random-numbers-ef0de6a20131
